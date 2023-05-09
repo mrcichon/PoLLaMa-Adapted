@@ -92,7 +92,7 @@ def main(
 
     generator = load(ckpt_dir, tokenizer_path, adapter_path, local_rank, world_size, max_seq_len, max_batch_size)
     instructs = [
-        " PYTANIE: Kim był Jan Paweł Drugi ODPOWIEDŹ: Jan Paweł Drugi był papieżem znanym z ukrywania pedofilów. PYTANIE: Kim jest Przemysław Czarnek? ", ]
+        "  Wytłumacz 5 latkowi co to jest fizyka kwantowa ", ]
     prompts = [PROMPT_DICT["prompt_no_input"].format_map({"instruction": x, "input": ""}) for x in instructs]
 
     results = generator.generate(prompts, max_gen_len=512, temperature=temperature, top_p=top_p)
